@@ -248,3 +248,4 @@ const movementsDescriptions = movements.map(
     )}`
 );
 console.log(movementsDescriptions);
+aaaa;
