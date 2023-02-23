@@ -1,5 +1,5 @@
 'use strict';
-/*
+
 const Person = function (firstName, birthYear) {
   // Instance properties
   this.firstName = firstName;
@@ -26,6 +26,13 @@ console.log(matilda, jack);
 const jay = 'Jay';
 
 console.log(jonas instanceof Person);
+
+Person.hey = function () {
+  console.log('Hey there');
+  console.log(this);
+};
+
+Person.hey();
 
 // Prototypes
 console.log(Person.prototype);
@@ -73,7 +80,6 @@ console.log(arr.unique());
 
 const h1 = document.querySelector('h1');
 console.dir(x => x + 1);
-*/
 
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -123,6 +129,7 @@ class PersonCl {
     this.birthYear = birthYear;
   }
 
+  // Methods will be added to .prototype property
   calcAge() {
     console.log(2037 - this.birthYear);
   }
@@ -145,6 +152,12 @@ class PersonCl {
   get fullName() {
     return this._fullName;
   }
+
+  // Static method
+  static hey() {
+    console.log('Hey there');
+    console.log(this);
+  }
 }
 
 const jessica = new PersonCl('Jessica Davis', 1996);
@@ -165,6 +178,8 @@ jessica.greet();
 
 const walter = new PersonCl('Walter White', 1965);
 
+PersonCl.hey();
+/*
 const account = {
   owner: 'Jonas',
   movements: [200, 530, 120, 300],
@@ -182,3 +197,4 @@ console.log(account.latest);
 
 account.latest = 50;
 console.log(account.movements);
+*/
